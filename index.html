@@ -1,1 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle JS</title>
+</head>
+<body>
 
+<script>
+console.log("Використання:");
+console.log('triangle(value1, "type1", value2, "type2")');
+console.log('Типи: leg, hypotenuse, angle');
+
+function triangle(v1, t1, v2, t2) {
+
+    let a, b, c;
+    let alpha, beta;
+
+    if (v1 <= 0 || v2 <= 0) {
+        return "Zero or negative input";
+    }
+
+    if ((t1 === "leg" && t2 === "hypotenuse") || 
+        (t2 === "leg" && t1 === "hypotenuse")) {
+
+        a = (t1 === "leg") ? v1 : v2;
+        c = (t1 === "hypotenuse") ? v1 : v2;
+
+        if (a >= c) return "Incorrect values";
+
+        b = Math.sqrt(c*c - a*a);
+
+        alpha = Math.asin(a / c) * 180 / Math.PI;
+        beta = 90 - alpha;
+    }
+
+    else if ((t1 === "angle" && t2 === "leg") || 
+             (t2 === "angle" && t1 === "leg")) {
+
+        alpha = (t1 === "angle") ? v1 : v2;
+        a = (t1 === "leg") ? v1 : v2;
+
+        if (alpha <= 0 || alpha >= 90) return "Incorrect angle";
+
+        let rad = alpha * Math.PI / 180;
+
+        c = a / Math.sin(rad);
+        b = Math.sqrt(c*c - a*a);
+        beta = 90 - alpha;
+    }
+
+    else {
+        console.log("Перечитай інструкцію");
+        return "failed";
+    }
+
+    console.log("a =", a);
+    console.log("b =", b);
+    console.log("c =", c);
+    console.log("alpha =", alpha);
+    console.log("beta =", beta);
+
+    return "success";
+}
+
+</script>
+
+</body>
+</html>
