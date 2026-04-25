@@ -18,3 +18,20 @@ car1.numberOfAccidents = 0;
 
 // перевірка
 console.log(car1);
+
+// 2. car2 через літерал об’єкта
+
+let car2 = {
+    color: "blue",
+    maxSpeed: 200,
+    driver: {
+        name: "Твоє Ім’я Прізвище",
+        category: "B",
+        personalLimitations: null
+    },
+    tuning: false,
+    numberOfAccidents: 2
+};
+
+// перевірка
+console.log(car2);
