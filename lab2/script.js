@@ -1,6 +1,5 @@
 console.log("Lab 2 works");
 
-// 1. car1 через new Object()
 
 let car1 = new Object();
 
@@ -16,10 +15,8 @@ car1.driver = {
 car1.tuning = true;
 car1.numberOfAccidents = 0;
 
-// перевірка
 console.log(car1);
 
-// 2. car2 через літерал об’єкта
 
 let car2 = {
     color: "blue",
@@ -33,5 +30,18 @@ let car2 = {
     numberOfAccidents: 2
 };
 
-// перевірка
 console.log(car2);
+
+
+car1.drive = function () {
+    console.log("I am not driving at night");
+};
+
+car1.drive();
+
+
+car2.drive = function () {
+    console.log("I can drive anytime");
+};
+
+car2.drive();
