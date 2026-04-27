@@ -89,3 +89,42 @@ truck2.assignDriver("Petro Petrov", false, 3);
 // перевірка
 truck1.trip();
 truck2.trip();
+
+// 8. Клас Square
+
+class Square {
+    constructor(a) {
+        this.a = a;
+    }
+
+    // статичний метод
+    static help() {
+        console.log("Square is a figure with 4 equal sides and 90 degree angles.");
+    }
+
+    // периметр
+    length() {
+        console.log("Perimeter:", 4 * this.a);
+    }
+
+    // площа
+    square() {
+        console.log("Area:", this.a * this.a);
+    }
+
+    // повна інформація
+    info() {
+        console.log("Square info:");
+        console.log("Sides: ", this.a, this.a, this.a, this.a);
+        console.log("Angles: 90, 90, 90, 90");
+        console.log("Perimeter:", 4 * this.a);
+        console.log("Area:", this.a * this.a);
+    }
+}
+
+let square1 = new Square(5);
+
+Square.help();
+square1.length();
+square1.square();
+square1.info();
