@@ -246,3 +246,77 @@ Parallelogram.help();
 p1.length();
 p1.square();
 p1.info();
+
+// 12. Triangular
+
+function Triangular(a = 3, b = 4, c = 5) {
+    return { a, b, c };
+}
+
+// перевірка
+let t1 = Triangular();
+let t2 = Triangular(6, 8, 10);
+let t3 = Triangular(5, 5, 5);
+
+console.log(t1);
+console.log(t2);
+console.log(t3);
+
+// 13. PiMultiplier
+
+function PiMultiplier(num) {
+    return function () {
+        return Math.PI * num;
+    };
+}
+
+// створюємо функції
+let f1 = PiMultiplier(2);
+let f2 = PiMultiplier(2 / 3);
+let f3 = PiMultiplier(0.5);
+
+// перевірка
+console.log(f1());
+console.log(f2());
+console.log(f3());
+
+// 14. Painter
+
+function Painter(color) {
+    return function (obj) {
+        if (!obj.type) {
+            console.log("No 'type' property occurred!");
+        } else {
+            console.log(color + " " + obj.type);
+        }
+    };
+}
+
+// створюємо
+let PaintBlue = Painter("Blue");
+let PaintRed = Painter("Red");
+let PaintYellow = Painter("Yellow");
+
+// об’єкти
+let obj1 = {
+    maxSpeed: 280,
+    type: "Sportcar",
+    color: "magenta"
+};
+
+let obj2 = {
+    type: "Truck",
+    avgSpeed: 90,
+    loadCapacity: 2400
+};
+
+let obj3 = {
+    maxSpeed: 180,
+    color: "purple",
+    isCar: true
+};
+
+// перевірка
+PaintBlue(obj1);
+PaintRed(obj2);
+PaintYellow(obj3);
