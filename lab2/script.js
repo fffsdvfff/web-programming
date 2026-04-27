@@ -205,3 +205,44 @@ Rhombus.help();
 rhombus1.length();
 rhombus1.square();
 rhombus1.info();
+
+// 11. Клас Parallelogram
+
+class Parallelogram extends Rectangle {
+    constructor(a, b, alpha, beta) {
+        super(a, b);
+        this.alpha = alpha;
+        this.beta = beta;
+    }
+
+    static help() {
+        console.log("Parallelogram has opposite sides equal and opposite angles equal.");
+    }
+
+    length() {
+        console.log("Perimeter:", 2 * (this.a + this.b));
+    }
+
+    square() {
+        let area = this.a * this.b * Math.sin(this.alpha * Math.PI / 180);
+        console.log("Area:", area);
+    }
+
+    info() {
+        console.log("Parallelogram info:");
+        console.log("Sides:", this.a, this.b, this.a, this.b);
+        console.log("Angles:", this.alpha, this.beta, this.alpha, this.beta);
+
+        console.log("Perimeter:", 2 * (this.a + this.b));
+
+        let area = this.a * this.b * Math.sin(this.alpha * Math.PI / 180);
+        console.log("Area:", area);
+    }
+}
+
+let p1 = new Parallelogram(5, 3, 120, 60);
+
+Parallelogram.help();
+p1.length();
+p1.square();
+p1.info();
