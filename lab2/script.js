@@ -157,6 +157,7 @@ class Rectangle extends Square {
     }
 }
 
+
 let rect1 = new Rectangle(5, 3);
 
 Rectangle.help();
