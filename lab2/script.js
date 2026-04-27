@@ -82,32 +82,25 @@ Truck.prototype.assignDriver = function (name, nightDriving, experience) {
 let truck1 = new Truck("white", 5000, 90, "Volvo", "FH16");
 let truck2 = new Truck("black", 4500, 80, "MAN", "TGX");
 
-// додаємо водіїв
 truck1.assignDriver("Ivan Ivanov", true, 5);
 truck2.assignDriver("Petro Petrov", false, 3);
 
-// перевірка
 truck1.trip();
 truck2.trip();
-
-// 8. Клас Square
 
 class Square {
     constructor(a) {
         this.a = a;
     }
 
-    // статичний метод
     static help() {
         console.log("Square is a figure with 4 equal sides and 90 degree angles.");
     }
 
-    // периметр
     length() {
         console.log("Perimeter:", 4 * this.a);
     }
 
-    // площа
     square() {
         console.log("Area:", this.a * this.a);
     }
@@ -128,7 +121,6 @@ square1.length();
 square1.square();
 square1.info();
 
-// 9. Клас Rectangle
 
 class Rectangle extends Square {
     constructor(a, b) {
@@ -165,7 +157,6 @@ rect1.length();
 rect1.square();
 rect1.info();
 
-// 10. Клас Rhombus
 
 class Rhombus extends Square {
     constructor(a, alpha, beta) {
@@ -183,7 +174,6 @@ class Rhombus extends Square {
     }
 
     square() {
-        // формула: a^2 * sin(alpha)
         let area = this.a * this.a * Math.sin(this.alpha * Math.PI / 180);
         console.log("Area:", area);
     }
@@ -205,8 +195,6 @@ Rhombus.help();
 rhombus1.length();
 rhombus1.square();
 rhombus1.info();
-
-// 11. Клас Parallelogram
 
 class Parallelogram extends Rectangle {
     constructor(a, b, alpha, beta) {
@@ -247,13 +235,11 @@ p1.length();
 p1.square();
 p1.info();
 
-// 12. Triangular
 
 function Triangular(a = 3, b = 4, c = 5) {
     return { a, b, c };
 }
 
-// перевірка
 let t1 = Triangular();
 let t2 = Triangular(6, 8, 10);
 let t3 = Triangular(5, 5, 5);
@@ -262,7 +248,6 @@ console.log(t1);
 console.log(t2);
 console.log(t3);
 
-// 13. PiMultiplier
 
 function PiMultiplier(num) {
     return function () {
@@ -270,17 +255,14 @@ function PiMultiplier(num) {
     };
 }
 
-// створюємо функції
 let f1 = PiMultiplier(2);
 let f2 = PiMultiplier(2 / 3);
 let f3 = PiMultiplier(0.5);
 
-// перевірка
 console.log(f1());
 console.log(f2());
 console.log(f3());
 
-// 14. Painter
 
 function Painter(color) {
     return function (obj) {
@@ -292,12 +274,10 @@ function Painter(color) {
     };
 }
 
-// створюємо
 let PaintBlue = Painter("Blue");
 let PaintRed = Painter("Red");
 let PaintYellow = Painter("Yellow");
 
-// об’єкти
 let obj1 = {
     maxSpeed: 280,
     type: "Sportcar",
@@ -316,7 +296,6 @@ let obj3 = {
     isCar: true
 };
 
-// перевірка
 PaintBlue(obj1);
 PaintRed(obj2);
 PaintYellow(obj3);
