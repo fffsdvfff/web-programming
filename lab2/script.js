@@ -127,3 +127,39 @@ Square.help();
 square1.length();
 square1.square();
 square1.info();
+
+// 9. Клас Rectangle
+
+class Rectangle extends Square {
+    constructor(a, b) {
+        super(a);
+        this.b = b;
+    }
+
+    static help() {
+        console.log("Rectangle has 4 sides, opposite sides are equal, all angles are 90 degrees.");
+    }
+
+    length() {
+        console.log("Perimeter:", 2 * (this.a + this.b));
+    }
+
+    square() {
+        console.log("Area:", this.a * this.b);
+    }
+
+    info() {
+        console.log("Rectangle info:");
+        console.log("Sides:", this.a, this.b, this.a, this.b);
+        console.log("Angles: 90, 90, 90, 90");
+        console.log("Perimeter:", 2 * (this.a + this.b));
+        console.log("Area:", this.a * this.b);
+    }
+}
+
+let rect1 = new Rectangle(5, 3);
+
+Rectangle.help();
+rect1.length();
+rect1.square();
+rect1.info();
