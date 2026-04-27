@@ -164,3 +164,44 @@ Rectangle.help();
 rect1.length();
 rect1.square();
 rect1.info();
+
+// 10. Клас Rhombus
+
+class Rhombus extends Square {
+    constructor(a, alpha, beta) {
+        super(a);
+        this.alpha = alpha;
+        this.beta = beta;
+    }
+
+    static help() {
+        console.log("Rhombus is a figure with 4 equal sides, opposite angles are equal.");
+    }
+
+    length() {
+        console.log("Perimeter:", 4 * this.a);
+    }
+
+    square() {
+        // формула: a^2 * sin(alpha)
+        let area = this.a * this.a * Math.sin(this.alpha * Math.PI / 180);
+        console.log("Area:", area);
+    }
+
+    info() {
+        console.log("Rhombus info:");
+        console.log("Sides:", this.a, this.a, this.a, this.a);
+        console.log("Angles:", this.alpha, this.beta, this.alpha, this.beta);
+        console.log("Perimeter:", 4 * this.a);
+
+        let area = this.a * this.a * Math.sin(this.alpha * Math.PI / 180);
+        console.log("Area:", area);
+    }
+}
+
+let rhombus1 = new Rhombus(5, 120, 60);
+
+Rhombus.help();
+rhombus1.length();
+rhombus1.square();
+rhombus1.info();
