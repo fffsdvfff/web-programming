@@ -112,7 +112,6 @@ class Square {
         console.log("Area:", this.a * this.a);
     }
 
-    // повна інформація
     info() {
         console.log("Square info:");
         console.log("Sides: ", this.a, this.a, this.a, this.a);
