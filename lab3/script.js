@@ -10,7 +10,6 @@
             helloSpeaker.speak(names[i]);
         }
     }
-
     console.log("Додатковий спосіб відбору: якщо ім'я закінчується на літеру 'a', виводиться Good Bye, інакше Hello.");
 
     for (var i = 0; i < names.length; i++) {
