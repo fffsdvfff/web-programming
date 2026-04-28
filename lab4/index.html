@@ -1,1 +1,51 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №4</title>
+</head>
+<body>
 
+<h2>Лабораторна робота №4</h2>
+<p>Результати роботи алгоритмів сортування виводяться у консоль браузера.</p>
+
+<script src="sorting.js"></script>
+
+<script>
+    let normalArray = [];
+
+    for (let i = 0; i < 100; i++) {
+        normalArray.push(Math.floor(Math.random() * 1000));
+    }
+
+    let sparseArray = [];
+
+    for (let i = 0; i < 100; i++) {
+        if (i % 10 === 0) {
+            sparseArray[i] = undefined;
+        } else {
+            sparseArray[i] = Math.floor(Math.random() * 1000);
+        }
+    }
+
+    console.log("=== Нерозріджений масив ===");
+    console.log("Початковий масив:", normalArray);
+
+    console.log("Bubble sort:", SortingLib.bubbleSort(normalArray, true));
+    console.log("Selection sort:", SortingLib.selectionSort(normalArray, true));
+    console.log("Insertion sort:", SortingLib.insertionSort(normalArray, true));
+    console.log("Shell sort:", SortingLib.shellSort(normalArray, true));
+    console.log("Quick sort:", SortingLib.quickSort(normalArray, true));
+
+    console.log("=== Розріджений масив ===");
+    console.log("Початковий масив:", sparseArray);
+
+    console.log("Bubble sort:", SortingLib.bubbleSort(sparseArray, true));
+    console.log("Selection sort:", SortingLib.selectionSort(sparseArray, true));
+    console.log("Insertion sort:", SortingLib.insertionSort(sparseArray, true));
+    console.log("Shell sort:", SortingLib.shellSort(sparseArray, true));
+    console.log("Quick sort:", SortingLib.quickSort(sparseArray, true));
+</script>
+
+</body>
+</html>
