@@ -21,15 +21,15 @@ startBtn.onclick = function () {
     document.getElementById("info").style.display = "block";
     document.getElementById("menu").style.display = "none";
     if (difficulty === "easy") {
-        timeLeft = 10;
+        timeLeft = 30;
         squareSize = 60;
         moveDistance = 120;
     } else if (difficulty === "medium") {
-        timeLeft = 5;
+        timeLeft = 15;
         squareSize = 40;
         moveDistance = 250;
     } else if (difficulty === "hard") {
-        timeLeft = 2;
+        timeLeft = 7;
         squareSize = 25;
         moveDistance = 500;
     }
