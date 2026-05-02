@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang = "uk">
+<head>
+    <meta charset = "UTF-8">
+    <title>Lights out Game</title>
+    <link rel ="stylesheet" href="style.css">
+</head>
+<body>
+    <div class = "game-contaier">
+        <h1>Ligts Out</h1>
 
+        <div class = "controls">
+            <lebel for="levelSelect">Оберіть рівень:</lebel>
+            <select id="levelSelect">
+                <option value="0">Рівень 1</option>
+                <option value="1">Рівень 2</option>
+                <option value="2">Рівень 3</option>
+            </select>
+
+            <button id="startBtn">Почати гру</button>
+            <button id="resetBtn">Почати цей рівень спочатку</button>
+            <button id="newGameBtn">Інша головоломка</button>
+        </div>
+
+        <div class="info">
+            <p>Мінімальна кількість кроків: <span id="minMoves">0</span></p>
+            <p>Ваші ходи:<span id="timer">00:00/span></p>
+        </div>
+
+        <div id="board" class="board"></div>
+
+        <p id="message"></p>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
