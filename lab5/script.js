@@ -61,3 +61,22 @@ square.onclick = function () {
     scoreText.textContent = score;
     moveSquare();
 };
+
+function moveSquare() {
+    let gameArea = document.getElementById("gameArea");
+
+    let currentLeft = square.offsetLeft;
+    let currentTop = square.offsetTop;
+
+    let minLeft = Math.max(0, currentLeft - moveDistance);
+    let maxLeft = Math.min(gameArea.clientWidth - squareSize, currentLeft + moveDistance);
+
+    let minTop = Math.max(0, currentTop - moveDistance);
+    let maxTop = Math.min(gameArea.clientHeight - squareSize, currentTop + moveDistance);
+
+    let newLeft = Math.floor(Math.random() * (maxLeft - minLeft + 1)) + minLeft;
+    let newTop = Math.floor(Math.random() * (maxTop - minTop + 1)) + minTop;
+
+    square.style.left = newLeft + "px";
+    square.style.top = newTop + "px";
+}
