@@ -1,1 +1,46 @@
+let difficultySelect = document.getElementById("difficulty");
+let colorSelect = document.getElementById("color");
+let startBtn = document.getElementById("startBtn");
+let square = document.getElementById("square");
+let scoreText = document.getElementById("score");
+let timeText = document.getElementById("time"); 
+
+let score = 0;
+let timeLeft = 0;
+let squareSize = 0;
+let moveDistance = 0;
+let timer;
+ 
+startBtn.onclick = function () {
+    let difficulty = difficultySelect.value;
+    let color = colorSelect.value;
+
+    if (difficulty === "" || color === "") {
+        return;
+    }
+
+    if (difficulty === "easy") {
+        timeLeft = 10;
+        squareSize = 60;
+        moveDistance = 120;
+    } else if (difficulty === "medium") {
+        timeLeft = 5;
+        squareSize = 40;
+        moveDistance = 250;
+    } else if (difficulty === "hard") {
+        timeLeft = 2;
+        squareSize = 25;
+        moveDistance = 500;
+    }
+
+    score = 0;
+    scoreText.textContent = score;
+    timeText.textContent = timeLeft;
+
+    square.style.width = squareSize + "px";
+    square.style.height = squareSize + "px";
+    square.style.backgroundColor = color;
+    square.style.display = "block";
+
+    moveSquare();
 
