@@ -44,3 +44,20 @@ startBtn.onclick = function () {
 
     moveSquare();
 
+    timer = setInterval(function () {
+        timeLeft--;
+        timeText.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(timer);
+            square.style.display = "none";
+            alert("Game over! Your score is " + score + ", congratulations!\nPlease, reload the page to start a new game.");
+        }
+    }, 1000);
+};
+
+square.onclick = function () {
+    score++;
+    scoreText.textContent = score;
+    moveSquare();
+};
