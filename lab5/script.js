@@ -18,7 +18,7 @@ startBtn.onclick = function () {
     if (difficulty === "" || color === "") {
         return;
     }
-
+    document.getElementById("info").style.display = "block";
     if (difficulty === "easy") {
         timeLeft = 10;
         squareSize = 60;
