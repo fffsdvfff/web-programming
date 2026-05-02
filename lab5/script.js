@@ -19,6 +19,7 @@ startBtn.onclick = function () {
         return;
     }
     document.getElementById("info").style.display = "block";
+    document.getElementById("menu").style.display = "none";
     if (difficulty === "easy") {
         timeLeft = 10;
         squareSize = 60;
