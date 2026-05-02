@@ -51,7 +51,7 @@ startBtn.onclick = function () {
 
         if (timeLeft <= 0) {
             clearInterval(timer);
-            square.style.display = "none";
+            square.onclick = null;
             alert("Game over! Your score is " + score + ", congratulations!\nPlease, reload the page to start a new game.");
         }
     }, 1000);
