@@ -1,1 +1,49 @@
+const content = document.getElementById("content");
 
+document.getElementById("catalogLink").addEventListener("click", loadCategories);
+
+function loadCategories() {
+    fetch("data/categories.json")
+        .then(res => res.json())
+        .then(data => {
+            let html = "<h2>Каталог</h2>";
+
+            data.forEach(cat => {
+                html += `<p onclick="loadCategory('${cat.shortname}')">${cat.name}</p>`;
+            });
+
+            html += `<p onclick="loadRandom()">Specials</p>`;
+
+            content.innerHTML = html;
+        });
+}
+
+function loadCategory(name) {
+    fetch(`data/${name}.json`)
+        .then(res => res.json())
+        .then(data => {
+            let html = `<h2>${data.category}</h2>`;
+
+            data.items.forEach(item => {
+                html += `
+                <div class="item">
+                    <img src="${item.image}" width="100">
+                    <h3>${item.name}</h3>
+                    <p>${item.description}</p>
+                    <strong>${item.price}</strong>
+                </div>
+                `;
+            });
+
+            content.innerHTML = html;
+        });
+}
+
+function loadRandom() {
+    fetch("data/categories.json")
+        .then(res => res.json())
+        .then(data => {
+            const random = data[Math.floor(Math.random() * data.length)];
+            loadCategory(random.shortname);
+        });
+}
