@@ -7,6 +7,30 @@
             "description": "Смачний бургер",
             "price": "$5",
             "image": "https://placehold.co/200"
-        }
+        },
+        {
+      "id": 2,
+      "name": "Chicken burger",
+      "shortname": "chicken",
+      "description": "Бургер з курячим філе, соусом та листям салату.",
+      "price": "$6",
+      "image": "https://placehold.co/200x200?text=Burger+2"
+    },
+    {
+      "id": 3,
+      "name": "Double burger",
+      "shortname": "double",
+      "description": "Подвійний бургер для тих, хто хоче більше м’яса.",
+      "price": "$8",
+      "image": "https://placehold.co/200x200?text=Burger+3"
+    },
+    {
+      "id": 4,
+      "name": "Vegan burger",
+      "shortname": "vegan",
+      "description": "Бургер без м’яса з овочевою котлетою та соусом.",
+      "price": "$7",
+      "image": "https://placehold.co/200x200?text=Burger+4"
+    }
     ]
 }

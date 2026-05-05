@@ -23,6 +23,8 @@ function loadCategory(name) {
         .then(res => res.json())
         .then(data => {
             let html = `<h2>${data.category}</h2>`;
+            html += `<div class="items">`;
+
 
             data.items.forEach(item => {
                 html += `
@@ -30,11 +32,11 @@ function loadCategory(name) {
                     <img src="${item.image}" width="100">
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
-                    <strong>${item.price}</strong>
+                    <p class="price">${item.price}</p>
                 </div>
                 `;
             });
-
+             html += `</div>`;
             content.innerHTML = html;
         });
 }

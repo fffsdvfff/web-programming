@@ -1,1 +1,37 @@
-
+{
+  "category": "Desserts",
+  "items": [
+    {
+      "id": 1,
+      "name": "Chocolate cake",
+      "shortname": "cake",
+      "description": "Шоколадний торт з кремом.",
+      "price": "$5",
+      "image": "https://placehold.co/200x200?text=Cake"
+    },
+    {
+      "id": 2,
+      "name": "Ice cream",
+      "shortname": "icecream",
+      "description": "Ванільне морозиво.",
+      "price": "$3",
+      "image": "https://placehold.co/200x200?text=Ice+Cream"
+    },
+    {
+      "id": 3,
+      "name": "Donut",
+      "shortname": "donut",
+      "description": "Солодкий пончик з глазур’ю.",
+      "price": "$2",
+      "image": "https://placehold.co/200x200?text=Donut"
+    },
+    {
+      "id": 4,
+      "name": "Cheesecake",
+      "shortname": "cheesecake",
+      "description": "Ніжний сирний десерт.",
+      "price": "$4",
+      "image": "https://placehold.co/200x200?text=Cheesecake"
+    }
+  ]
+}

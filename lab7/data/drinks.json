@@ -1,1 +1,37 @@
-
+{
+  "category": "Drinks",
+  "items": [
+    {
+      "id": 1,
+      "name": "Cola",
+      "shortname": "cola",
+      "description": "Освіжаючий газований напій.",
+      "price": "$2",
+      "image": "https://placehold.co/200x200?text=Cola"
+    },
+    {
+      "id": 2,
+      "name": "Orange juice",
+      "shortname": "juice",
+      "description": "Свіжовичавлений апельсиновий сік.",
+      "price": "$3",
+      "image": "https://placehold.co/200x200?text=Juice"
+    },
+    {
+      "id": 3,
+      "name": "Coffee",
+      "shortname": "coffee",
+      "description": "Гарячий ароматний напій.",
+      "price": "$2.5",
+      "image": "https://placehold.co/200x200?text=Coffee"
+    },
+    {
+      "id": 4,
+      "name": "Milkshake",
+      "shortname": "milkshake",
+      "description": "Солодкий молочний коктейль.",
+      "price": "$4",
+      "image": "https://placehold.co/200x200?text=Milkshake"
+    }
+  ]
+}
