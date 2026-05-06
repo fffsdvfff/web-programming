@@ -95,10 +95,10 @@ header a:hover {
     font-weight: bold;
 }
 h1 {
-    font-size: 48px;
-    margin: 0 0 20px;
-    font-weight: 800;
-    color: #111;
+    font-size: 36px;
+    margin: 0;
+    font-weight: 600;
+    color: #222;
     text-shadow: 2px 2px 0 rgba(255,255,255,0.5);
 }
 
@@ -106,4 +106,12 @@ h2 {
     font-size: 38px;
     margin-bottom: 30px;
     color: #111;
+}
+#content {
+    min-height: calc(100vh - 70px);
+    padding: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
