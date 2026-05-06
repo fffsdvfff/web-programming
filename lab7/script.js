@@ -2,6 +2,7 @@ const content = document.getElementById("content");
 
 document.getElementById("catalogLink").addEventListener("click", loadCategories);
 document.getElementById("homeLink").addEventListener("click", loadHome);
+
 function loadCategories() {
     fetch("data/categories.json")
         .then(res => res.json())
@@ -9,10 +10,10 @@ function loadCategories() {
             let html = "<h2>Каталог</h2>";
 
             data.forEach(cat => {
-                html += `<p onclick="loadCategory('${cat.shortname}')">${cat.name}</p>`;
+               html += `<div class="category-link" onclick="loadCategory('${cat.shortname}')">${cat.name}</div>`;
             });
 
-            html += `<p onclick="loadRandom()">Specials</p>`;
+            html += `<div class="category-link" onclick="loadRandom()">Specials</div>`;
 
             content.innerHTML = html;
         });
@@ -29,7 +30,7 @@ function loadCategory(name) {
             data.items.forEach(item => {
                 html += `
                 <div class="item">
-                    <img src="${item.image}" width="100">
+                    <img src="${item.image}" alt="${item.name}">>
                     <h3>${item.name}</h3>
                     <p>${item.description}</p>
                     <p class="price">${item.price}</p>
