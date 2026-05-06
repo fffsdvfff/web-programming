@@ -1,7 +1,7 @@
 const content = document.getElementById("content");
 
 document.getElementById("catalogLink").addEventListener("click", loadCategories);
-
+document.getElementById("homeLink").addEventListener("click", loadHome);
 function loadCategories() {
     fetch("data/categories.json")
         .then(res => res.json())
@@ -39,6 +39,13 @@ function loadCategory(name) {
              html += `</div>`;
             content.innerHTML = html;
         });
+}
+function loadHome() {
+    content.innerHTML = `
+    <div class="home">
+        <h1>Ласкаво просимо</h1>
+    </div>
+    `;
 }
 
 function loadRandom() {
