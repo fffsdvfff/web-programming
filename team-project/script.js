@@ -1,6 +1,10 @@
 const navBtns = document.querySelectorAll(".nav-btn");
 const pages = document.querySelectorAll(".page");
 
+const nameInput = document.getElementById("nameInput");
+const helloBtn = document.getElementById("helloBtn");
+const userText = document.getElementById("userText");
+
 navBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
     const pageName = btn.dataset.page;
@@ -11,4 +15,14 @@ navBtns.forEach(function(btn) {
 
     document.getElementById(pageName).classList.add("active");
   });
+});
+
+helloBtn.addEventListener("click", function() {
+  const name = nameInput.value.trim();
+
+  if (name === "") {
+    userText.textContent = "Привіт, гість!";
+  } else {
+    userText.textContent = "Привіт, " + name + "! 🐾";
+  }
 });
