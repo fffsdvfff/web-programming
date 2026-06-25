@@ -131,6 +131,11 @@ footer {
   padding: 18px;
   text-align: center;
   transition: 0.2s;
+  cursor: pointer;
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .product-card:hover {
   transform: translateY(-5px);
@@ -295,9 +300,6 @@ footer {
   position: absolute;
   top: 0;
   font-size: 34px;
-}
-.product-card {
-  cursor: pointer;
 }
 
 .modal {

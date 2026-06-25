@@ -62,7 +62,6 @@ function showProducts() {
           <div class="product-img">${item.icon}</div>
           <h3>${item.name}</h3>
           <p class="category">${item.category}</p>
-          <p>${item.description}</p>
         </div>
       `;
     }
