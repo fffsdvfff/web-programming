@@ -79,3 +79,10 @@ footer {
   color: #6b2346;
   font-weight: bold;
 }
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
