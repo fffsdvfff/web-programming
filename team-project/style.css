@@ -130,8 +130,12 @@ footer {
   border-radius: 18px;
   padding: 18px;
   text-align: center;
+  transition: 0.2s;
 }
-
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 14px rgba(255, 143, 189, 0.35);
+}
 .product-img {
   font-size: 45px;
   margin-bottom: 10px;
