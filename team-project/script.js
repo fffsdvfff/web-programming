@@ -129,12 +129,15 @@ let lives = 3;
 let gameRun = false;
 let createTimer;
 
-document.addEventListener("keydown", function(event) {
-  if (event.key == "ArrowLeft") {
+let leftBtn = document.getElementById("leftBtn");
+let rightBtn = document.getElementById("rightBtn");
+
+function moveCat(side) {
+  if (side == "left") {
     catLeft = catLeft - 5;
   }
 
-  if (event.key == "ArrowRight") {
+  if (side == "right") {
     catLeft = catLeft + 5;
   }
 
@@ -147,6 +150,24 @@ document.addEventListener("keydown", function(event) {
   }
 
   cat.style.left = catLeft + "%";
+}
+
+document.addEventListener("keydown", function(event) {
+  if (event.key == "ArrowLeft") {
+    moveCat("left");
+  }
+
+  if (event.key == "ArrowRight") {
+    moveCat("right");
+  }
+});
+
+leftBtn.addEventListener("click", function() {
+  moveCat("left");
+});
+
+rightBtn.addEventListener("click", function() {
+  moveCat("right");
 });
 
 startGameBtn.addEventListener("click", function() {
