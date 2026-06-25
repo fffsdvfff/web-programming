@@ -86,3 +86,26 @@ footer {
 .page.active {
   display: block;
 }
+#userText {
+  padding: 8px 14px;
+  border-radius: 18px;
+}
+
+.hello-effect {
+  background: white;
+  animation: helloPop 0.4s;
+}
+
+@keyframes helloPop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

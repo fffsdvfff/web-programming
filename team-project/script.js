@@ -25,4 +25,10 @@ helloBtn.addEventListener("click", function() {
   } else {
     userText.textContent = "Привіт, " + name + "! 🐾";
   }
+
+  userText.classList.remove("hello-effect");
+
+  setTimeout(function() {
+    userText.classList.add("hello-effect");
+  }, 10);
 });
