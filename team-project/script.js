@@ -82,8 +82,15 @@ searchInput.addEventListener("input", function() {
 
 let cat = document.getElementById("cat");
 let gameArea = document.getElementById("gameArea");
+let startGameBtn = document.getElementById("startGameBtn");
+let scoreText = document.getElementById("score");
+let livesText = document.getElementById("lives");
 
 let catLeft = 50;
+let score = 0;
+let lives = 3;
+let gameRun = false;
+let createTimer;
 
 document.addEventListener("keydown", function(event) {
   if (event.key == "ArrowLeft") {
@@ -104,3 +111,91 @@ document.addEventListener("keydown", function(event) {
 
   cat.style.left = catLeft + "%";
 });
+
+startGameBtn.addEventListener("click", function() {
+  score = 0;
+  lives = 3;
+  gameRun = true;
+
+  scoreText.textContent = score;
+  livesText.textContent = lives;
+
+  startGameBtn.textContent = "Гра йде...";
+
+  clearInterval(createTimer);
+
+  createTimer = setInterval(function() {
+    createItem();
+  }, 900);
+});
+
+function createItem() {
+  let item = document.createElement("div");
+  item.classList.add("fall-item");
+
+  let randomNumber = Math.floor(Math.random() * 2);
+
+  if (randomNumber == 0) {
+    item.textContent = "🐟";
+  } else {
+    item.textContent = "🪨";
+  }
+
+  item.style.left = Math.random() * 90 + "%";
+
+  gameArea.appendChild(item);
+
+  let itemTop = 0;
+
+  let fallTimer = setInterval(function() {
+    if (gameRun == false) {
+      item.remove();
+      clearInterval(fallTimer);
+      return;
+    }
+
+    itemTop = itemTop + 4;
+    item.style.top = itemTop + "px";
+
+    if (isCatch(item, cat)) {
+      if (item.textContent == "🐟") {
+        score = score + 1;
+        scoreText.textContent = score;
+      } else {
+        lives = lives - 1;
+        livesText.textContent = lives;
+      }
+
+      item.remove();
+      clearInterval(fallTimer);
+
+      if (lives <= 0) {
+        endGame();
+      }
+    }
+
+    if (itemTop > 330) {
+      item.remove();
+      clearInterval(fallTimer);
+    }
+  }, 30);
+}
+
+function isCatch(item, cat) {
+  let itemBox = item.getBoundingClientRect();
+  let catBox = cat.getBoundingClientRect();
+
+  return !(
+    itemBox.bottom < catBox.top ||
+    itemBox.top > catBox.bottom ||
+    itemBox.right < catBox.left ||
+    itemBox.left > catBox.right
+  );
+}
+
+function endGame() {
+  gameRun = false;
+  clearInterval(createTimer);
+  startGameBtn.textContent = "Почати знову";
+  alert("Гру завершено! Бали: " + score);
+}

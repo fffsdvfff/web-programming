@@ -287,3 +287,8 @@ footer {
   color: #b83273;
   font-weight: bold;
 }
+.fall-item {
+  position: absolute;
+  top: 0;
+  font-size: 34px;
+}
