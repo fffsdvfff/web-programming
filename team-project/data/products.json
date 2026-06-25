@@ -31,30 +31,35 @@
     "name": "Рожевий бантик",
     "category": "Бантики",
     "icon": "🎀",
+    "image": "images/pink-bow.png",
     "description": "Милий аксесуар для котика."
   },
   {
     "name": "Клубочок",
     "category": "Іграшки",
     "icon": "🧶",
+    "image": "images/yarn.png",
     "description": "Проста іграшка, з якою котик може гратися."
   },
   {
     "name": "Мишка",
     "category": "Іграшки",
     "icon": "🐭",
+    "image": "images/mouse.png",
     "description": "М’яка іграшкова мишка для веселих ігор."
   },
    {
     "name": "М’ячик",
     "category": "Іграшки",
     "icon": "🎾",
+    "image": "images/ball.png",
     "description": "Легкий м’ячик для активної гри."
   },
   {
     "name": "Пір’їнка",
     "category": "Іграшки",
     "icon": "🪶",
+    "image": "images/feather.png",
     "description": "Іграшка, яка привертає увагу котика."
   },
 
@@ -62,24 +67,28 @@
     "name": "Рожевий бантик",
     "category": "Бантики",
     "icon": "🎀",
+    "image": "images/pink-bow.png",
     "description": "Милий аксесуар для котика."
   },
   {
     "name": "Червоний бантик",
     "category": "Бантики",
     "icon": "🎀",
+    "image": "images/red-bow.png",
     "description": "Яскравий бантик для святкового образу."
   },
   {
     "name": "Бантик з сердечком",
     "category": "Бантики",
     "icon": "💗",
+     "image": "images/heart-bow.png.JPG",
     "description": "Ніжний аксесуар у рожевому стилі."
   },
   {
     "name": "Святковий бантик",
     "category": "Бантики",
     "icon": "✨",
+    "image": "images/party-bow.png",
     "description": "Красивий бантик для особливого настрою."
   },
 
@@ -87,24 +96,28 @@
     "name": "М’яка лежанка",
     "category": "Будиночки",
     "icon": "🛏️",
+    "image": "images/bed.png",
     "description": "Зручне місце для відпочинку котика."
   },
   {
     "name": "Котячий будиночок",
     "category": "Будиночки",
     "icon": "🏠",
+    "image": "images/cat-house.png",
     "description": "Затишний будиночок для сну та гри."
   },
   {
     "name": "Подушка-лапка",
     "category": "Будиночки",
     "icon": "🐾",
+    "image": "images/paw-pillow.png",
     "description": "М’яка подушка у формі лапки."
   },
   {
     "name": "Кігтеточка",
     "category": "Будиночки",
     "icon": "🪵",
+     "image": "images/scratcher.png",
     "description": "Корисна річ для догляду за кігтиками."
   },
 
@@ -112,24 +125,28 @@
     "name": "Гребінець",
     "category": "Догляд",
     "icon": "🪮",
+    "image": "images/comb.png",
     "description": "Допомагає доглядати за шерстю котика."
   },
   {
     "name": "Шампунь",
     "category": "Догляд",
     "icon": "🧴",
+    "image": "images/shampoo.png",
     "description": "Засіб для чистої та м’якої шерсті."
   },
   {
     "name": "Мисочка",
     "category": "Догляд",
     "icon": "🥣",
+    "image": "images/bowl.png",
     "description": "Зручна мисочка для їжі або води."
   },
   {
     "name": "Переноска",
     "category": "Догляд",
     "icon": "🧺",
+    "image": "images/carrier.png",
     "description": "Потрібна для безпечного перевезення котика."
   },
 
@@ -137,24 +154,28 @@
     "name": "Нашийник",
     "category": "Аксесуари",
     "icon": "📿",
+    "image": "images/collar.png",
     "description": "Акуратний нашийник для котика."
   },
   {
     "name": "Медальйон",
     "category": "Аксесуари",
     "icon": "🏅",
+    "image": "images/medal.png",
     "description": "Маленька прикраса на нашийник."
   },
   {
     "name": "Котяча корона",
     "category": "Аксесуари",
     "icon": "👑",
+    "image": "images/crown.png",
     "description": "Милий аксесуар для красивого образу."
   },
   {
     "name": "Рожевий плед",
     "category": "Аксесуари",
     "icon": "🩷",
+     "image": "images/blanket.png",
     "description": "М’який плед для тепла і комфорту."
   }
 ]
