@@ -79,6 +79,7 @@ catBtns.forEach(function(btn) {
 searchInput.addEventListener("input", function() {
   showProducts();
 });
+
 let cat = document.getElementById("cat");
 let gameArea = document.getElementById("gameArea");
 
