@@ -1,1 +1,106 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Kitty World</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <nav class="navbar">
+      <div class="brand">Kitty World 🐾</div>
+
+      <div class="nav-links">
+        <button class="nav-btn" data-page="home">Головна</button>
+        <button class="nav-btn" data-page="catalog">Каталог</button>
+        <button class="nav-btn" data-page="game">Гра</button>
+        <button class="nav-btn" data-page="about">Про нас</button>
+      </div>
+
+      <div class="user-box" id="userText">
+        Привіт, гість!
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="page active">
+      <div class="hero">
+        <h1>Ласкаво просимо у Kitty World</h1>
+        <p>
+          Це милий рожевий сайт-каталог товарів для котиків:
+          ласощі, іграшки, бантики, будиночки та аксесуари.
+        </p>
+
+        <div class="name-form">
+          <input type="text" id="nameInput" placeholder="Введіть своє ім'я">
+          <button id="helloBtn">Привітати</button>
+        </div>
+      </div>
+    </section>
+    
+    <section id="catalog" class="page">
+      <h2>Каталог товарів для котиків</h2>
+
+      <div class="catalog-controls">
+        <input type="text" id="searchInput" placeholder="Пошук товару...">
+
+        <div class="category-buttons">
+          <button class="cat-btn active" data-category="all">Усі</button>
+          <button class="cat-btn" data-category="Ласощі">Ласощі</button>
+          <button class="cat-btn" data-category="Іграшки">Іграшки</button>
+          <button class="cat-btn" data-category="Бантики">Бантики</button>
+          <button class="cat-btn" data-category="Будиночки">Будиночки</button>
+          <button class="cat-btn" data-category="Догляд">Догляд</button>
+          <button class="cat-btn" data-category="Аксесуари">Аксесуари</button>
+        </div>
+      </div>
+
+      <div id="productsList" class="products-list">
+      </div>
+    </section>
+
+    <section id="game" class="page">
+      <h2>Гра Kitty Catch</h2>
+      <p>
+        Котик ловить смачну їжу, але повинен уникати каміння та інших небезпечних предметів.
+      </p>
+
+      <div class="game-box">
+        <button id="startGameBtn">Почати гру</button>
+
+        <div class="game-info">
+          <span>Бали: <b id="score">0</b></span>
+          <span>Життя: <b id="lives">3</b></span>
+        </div>
+
+        <div id="gameArea">
+          <div id="cat">🐱</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="page">
+      <h2>Про проєкт</h2>
+      <p>
+        Kitty World - це командний проєкт з Web-програмування.
+        Застосунок створений як односторінковий сайт-каталог з товарами для котиків.
+      </p>
+
+      <p>
+        У проєкті використовується HTML, CSS, JavaScript та завантаження даних з JSON-файлу.
+      </p>
+    </section>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
