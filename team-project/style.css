@@ -95,7 +95,6 @@ footer {
   font-weight: bold;
 }
 
-/* Перемикання сторінок */
 .page {
   display: none;
 }
@@ -104,7 +103,6 @@ footer {
   display: block;
 }
 
-/* Каталог */
 .catalog-controls {
   margin-bottom: 25px;
 }
@@ -149,7 +147,6 @@ footer {
   font-weight: bold;
 }
 
-/* Великі екрани */
 @media (min-width: 1200px) {
   main {
     max-width: 1200px;
@@ -160,7 +157,6 @@ footer {
   }
 }
 
-/* Ноутбуки */
 @media (max-width: 1199px) {
   main {
     max-width: 1000px;
@@ -171,7 +167,6 @@ footer {
   }
 }
 
-/* Планшети */
 @media (max-width: 991px) {
   main {
     width: 92%;
@@ -186,7 +181,6 @@ footer {
   }
 }
 
-/* Великі телефони */
 @media (max-width: 767px) {
   header {
     padding: 12px 15px;
@@ -213,7 +207,6 @@ footer {
   }
 }
 
-/* Маленькі телефони */
 @media (max-width: 575px) {
   body {
     font-size: 16px;
@@ -263,4 +256,33 @@ footer {
   footer {
     font-size: 14px;
   }
+}
+.game-info {
+  display: flex;
+  gap: 20px;
+  font-weight: bold;
+  color: #b83273;
+}
+
+#gameArea {
+  position: relative;
+  height: 350px;
+  margin-top: 20px;
+  background: #fff0f6;
+  border: 3px solid #ffb6d5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#cat {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  font-size: 45px;
+  transform: translateX(-50%);
+}
+
+.game-help {
+  color: #b83273;
+  font-weight: bold;
 }

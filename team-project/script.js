@@ -6,7 +6,6 @@ const helloBtn = document.getElementById("helloBtn");
 const userText = document.getElementById("userText");
 
 
-
 navBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
     const pageName = btn.dataset.page;
@@ -79,4 +78,28 @@ catBtns.forEach(function(btn) {
 
 searchInput.addEventListener("input", function() {
   showProducts();
+});
+let cat = document.getElementById("cat");
+let gameArea = document.getElementById("gameArea");
+
+let catLeft = 50;
+
+document.addEventListener("keydown", function(event) {
+  if (event.key == "ArrowLeft") {
+    catLeft = catLeft - 5;
+  }
+
+  if (event.key == "ArrowRight") {
+    catLeft = catLeft + 5;
+  }
+
+  if (catLeft < 5) {
+    catLeft = 5;
+  }
+
+  if (catLeft > 95) {
+    catLeft = 95;
+  }
+
+  cat.style.left = catLeft + "%";
 });
