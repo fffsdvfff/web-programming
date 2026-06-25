@@ -5,6 +5,8 @@ const nameInput = document.getElementById("nameInput");
 const helloBtn = document.getElementById("helloBtn");
 const userText = document.getElementById("userText");
 
+
+
 navBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
     const pageName = btn.dataset.page;
@@ -30,13 +32,32 @@ helloBtn.addEventListener("click", function() {
 });
 
 let productsList = document.getElementById("productsList");
+let searchInput = document.getElementById("searchInput");
+let catBtns = document.querySelectorAll(".cat-btn");
+
+
+let allProducts = [];
+let activeCategory = "Усі";
 
 fetch("data/products.json")
   .then(function(response) {
     return response.json();
   })
   .then(function(products) {
-    products.forEach(function(item) {
+    allProducts = products;
+    showProducts();
+  });
+
+function showProducts() {
+  productsList.innerHTML = "";
+
+  let searchText = searchInput.value.toLowerCase();
+
+  allProducts.forEach(function(item) {
+    let sameCategory = activeCategory == "Усі" || item.category == activeCategory;
+    let sameSearch = item.name.toLowerCase().includes(searchText);
+
+    if (sameCategory && sameSearch) {
       productsList.innerHTML += `
         <div class="product-card">
           <div class="product-img">${item.icon}</div>
@@ -45,5 +66,17 @@ fetch("data/products.json")
           <p>${item.description}</p>
         </div>
       `;
-    });
+    }
   });
+}
+
+catBtns.forEach(function(btn) {
+  btn.addEventListener("click", function() {
+    activeCategory = btn.textContent;
+    showProducts();
+  });
+});
+
+searchInput.addEventListener("input", function() {
+  showProducts();
+});
