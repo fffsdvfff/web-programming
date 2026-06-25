@@ -18,17 +18,13 @@ navBtns.forEach(function(btn) {
 });
 
 helloBtn.addEventListener("click", function() {
-  const name = nameInput.value.trim();
+  const name = nameInput.value;
 
-  if (name === "") {
+  if (name == "") {
     userText.textContent = "Привіт, гість!";
   } else {
     userText.textContent = "Привіт, " + name + "! 🐾";
   }
 
-  userText.classList.remove("hello-effect");
-
-  setTimeout(function() {
-    userText.classList.add("hello-effect");
-  }, 10);
+  userText.style.background = "white";
 });
