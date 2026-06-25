@@ -3,24 +3,28 @@
     "name": "Рибка",
     "category": "Ласощі",
     "icon": "🐟",
+    "image": "images/fish.png",
     "description": "Смачний перекус для котика."
   },
   {
     "name": "Молочко",
     "category": "Ласощі",
     "icon": "🥛",
+    "image": "images/milk.png",
     "description": "Ніжний напій для гарного настрою котика."
   },
   {
     "name": "Курочка",
     "category": "Ласощі",
     "icon": "🍗",
+    "image": "images/chicken.png",
     "description": "Поживні ласощі для активного котика."
   },
     {
     "name": "Котяче печиво",
     "category": "Ласощі",
     "icon": "🍪",
+    "image": "images/cookie.png",
     "description": "Маленьке печиво для котика як смачний бонус."
   },
   {

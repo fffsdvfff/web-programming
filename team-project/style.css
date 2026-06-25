@@ -347,3 +347,15 @@ footer {
   color: #e85fa0;
   font-weight: bold;
 }
+
+.product-img img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.modal-icon img {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+}

@@ -59,7 +59,9 @@ function showProducts() {
     if (sameCategory && sameSearch) {
       productsList.innerHTML += `
         <div class="product-card" data-name="${item.name}">
-          <div class="product-img">${item.icon}</div>
+          <div class="product-img">
+              ${item.image ? `<img src="${item.image}" alt="${item.name}">` : item.icon}
+          </div>
           <h3>${item.name}</h3>
           <p class="category">${item.category}</p>
         </div>
@@ -85,7 +87,11 @@ function addCardClicks() {
 
       allProducts.forEach(function(item) {
         if (item.name == productName) {
-          modalIcon.textContent = item.icon;
+         if (item.image) {
+           modalIcon.innerHTML = `<img src="${item.image}" alt="${item.name}">`;
+          } else {
+           modalIcon.textContent = item.icon;
+          }
           modalName.textContent = item.name;
           modalCategory.textContent = "Категорія: " + item.category;
           modalDescription.textContent = item.description;
