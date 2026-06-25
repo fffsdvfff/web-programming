@@ -58,7 +58,7 @@ function showProducts() {
 
     if (sameCategory && sameSearch) {
       productsList.innerHTML += `
-        <div class="product-card">
+        <div class="product-card" data-name="${item.name}">
           <div class="product-img">${item.icon}</div>
           <h3>${item.name}</h3>
           <p class="category">${item.category}</p>
@@ -67,7 +67,39 @@ function showProducts() {
       `;
     }
   });
+   addCardClicks();
 }
+
+let modal = document.getElementById("modal");
+let closeModal = document.getElementById("closeModal");
+let modalIcon = document.getElementById("modalIcon");
+let modalName = document.getElementById("modalName");
+let modalCategory = document.getElementById("modalCategory");
+let modalDescription = document.getElementById("modalDescription");
+
+function addCardClicks() {
+  let cards = document.querySelectorAll(".product-card");
+
+  cards.forEach(function(card) {
+    card.addEventListener("click", function() {
+      let productName = card.dataset.name;
+
+      allProducts.forEach(function(item) {
+        if (item.name == productName) {
+          modalIcon.textContent = item.icon;
+          modalName.textContent = item.name;
+          modalCategory.textContent = "Категорія: " + item.category;
+          modalDescription.textContent = item.description;
+          modal.classList.add("active");
+        }
+      });
+    });
+  });
+}
+
+closeModal.addEventListener("click", function() {
+  modal.classList.remove("active");
+});
 
 catBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
