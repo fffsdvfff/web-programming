@@ -24,15 +24,30 @@ nav {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
 }
 
-nav a {
+nav a,
+nav button {
   text-decoration: none;
-  color: #6b2346;
-  background: white;
+  color: white;
+  background: #ff8fbd;
   padding: 8px 14px;
   border-radius: 20px;
   font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+nav a:hover,
+nav button:hover {
+  background: #e85fa0;
+}
+
+#userText {
+  background: white;
+  color: #3b1f2b;
+  padding: 8px 12px;
 }
 
 main {
@@ -79,6 +94,8 @@ footer {
   color: #6b2346;
   font-weight: bold;
 }
+
+/* Перемикання сторінок */
 .page {
   display: none;
 }
@@ -86,6 +103,22 @@ footer {
 .page.active {
   display: block;
 }
+
+/* Каталог */
+.catalog-controls {
+  margin-bottom: 25px;
+}
+
+#searchInput {
+  margin-bottom: 12px;
+}
+
+.category-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .products-list {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -115,28 +148,119 @@ footer {
   color: #e85fa0;
   font-weight: bold;
 }
-@media (max-width: 768px) {
+
+/* Великі екрани */
+@media (min-width: 1200px) {
+  main {
+    max-width: 1200px;
+  }
+
+  .products-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ноутбуки */
+@media (max-width: 1199px) {
+  main {
+    max-width: 1000px;
+  }
+
+  .products-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Планшети */
+@media (max-width: 991px) {
+  main {
+    width: 92%;
+  }
+
+  section {
+    padding: 22px;
+  }
+
   .products-list {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 576px) {
+/* Великі телефони */
+@media (max-width: 767px) {
+  header {
+    padding: 12px 15px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .category-buttons {
+    gap: 7px;
+  }
+
   .products-list {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-.catalog-controls {
-  margin-bottom: 25px;
-}
+/* Маленькі телефони */
+@media (max-width: 575px) {
+  body {
+    font-size: 16px;
+  }
 
-#searchInput {
-  margin-bottom: 12px;
-}
+  header {
+    text-align: center;
+  }
 
-.category-buttons {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  nav {
+    flex-direction: column;
+  }
+
+  nav button {
+    width: 180px;
+  }
+
+  #userText {
+    margin-top: 5px;
+  }
+
+  main {
+    width: 95%;
+    margin: 20px auto;
+  }
+
+  section {
+    padding: 18px;
+  }
+
+  input {
+    width: 100%;
+  }
+
+  .category-buttons {
+    flex-direction: column;
+  }
+
+  .cat-btn {
+    width: 100%;
+  }
+
+  .products-list {
+    grid-template-columns: 1fr;
+  }
+
+  footer {
+    font-size: 14px;
+  }
 }
