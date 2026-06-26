@@ -198,7 +198,6 @@ startGameBtn.addEventListener("click", function() {
   clearItems();
 
   createTimer = setInterval(function() {
-    createItem();
   }, 900);
 });
 
