@@ -18,10 +18,6 @@ navBtns.forEach(function(btn) {
   });
 });
 
-let nameInput = document.getElementById("nameInput");
-let helloBtn = document.getElementById("helloBtn");
-let userText = document.getElementById("userText");
-
 helloBtn.addEventListener("click", function () {
   let name = nameInput.value.trim();
 
@@ -31,10 +27,10 @@ helloBtn.addEventListener("click", function () {
     userText.textContent = "Привіт, " + name + "! 🐾";
   }
 
-  userText.classList.remove("active");
+  userText.classList.remove("effect");
 
   setTimeout(function () {
-    userText.classList.add("active");
+    userText.classList.add("effect");
   }, 50);
 });
 

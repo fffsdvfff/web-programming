@@ -47,12 +47,6 @@ nav button:hover {
   background: #e85fa0;
 }
 
-#userText {
-  background: white;
-  color: #3b1f2b;
-  padding: 8px 12px;
-}
-
 main {
   width: 90%;
   max-width: 1100px;
@@ -237,9 +231,9 @@ footer {
     width: 180px;
   }
 
-  #userText {
-    margin-top: 5px;
-  }
+ .hello-result {
+  margin-top: 15px;
+}
 
   main {
     width: 95%;
@@ -397,10 +391,24 @@ footer {
   box-shadow: 0 5px 15px rgba(255, 105, 180, 0.25);
   transition: 0.4s;
 }
+.hello-result.effect {
+  animation: helloEffect 0.7s;
+}
 
-.hello-result.active {
-  background: #ffb6d5;
-  color: white;
-  transform: scale(1.06);
-  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.45);
+@keyframes helloEffect {
+  0% {
+    transform: scale(1);
+    background: #fff0f6;
+  }
+
+  50% {
+    transform: scale(1.12);
+    background: #ff8fc2;
+    color: white;
+  }
+
+  100% {
+    transform: scale(1);
+    background: #fff0f6;
+  }
 }
