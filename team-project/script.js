@@ -18,16 +18,24 @@ navBtns.forEach(function(btn) {
   });
 });
 
-helloBtn.addEventListener("click", function() {
-  const name = nameInput.value;
+let nameInput = document.getElementById("nameInput");
+let helloBtn = document.getElementById("helloBtn");
+let userText = document.getElementById("userText");
+
+helloBtn.addEventListener("click", function () {
+  let name = nameInput.value.trim();
 
   if (name == "") {
-    userText.textContent = "Привіт, гість!";
+    userText.textContent = "Привіт, гість! 🐾";
   } else {
     userText.textContent = "Привіт, " + name + "! 🐾";
   }
 
-  userText.style.background = "white";
+  userText.classList.remove("active");
+
+  setTimeout(function () {
+    userText.classList.add("active");
+  }, 50);
 });
 
 let productsList = document.getElementById("productsList");
