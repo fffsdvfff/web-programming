@@ -5,6 +5,35 @@ const nameInput = document.getElementById("nameInput");
 const helloBtn = document.getElementById("helloBtn");
 const userText = document.getElementById("userText");
 
+const productsList = document.getElementById("productsList");
+const searchInput = document.getElementById("searchInput");
+const catBtns = document.querySelectorAll(".cat-btn");
+
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+const modalIcon = document.getElementById("modalIcon");
+const modalName = document.getElementById("modalName");
+const modalCategory = document.getElementById("modalCategory");
+const modalDescription = document.getElementById("modalDescription");
+
+const cat = document.getElementById("cat");
+const gameArea = document.getElementById("gameArea");
+const startGameBtn = document.getElementById("startGameBtn");
+const scoreText = document.getElementById("score");
+const livesText = document.getElementById("lives");
+const leftBtn = document.getElementById("leftBtn");
+const rightBtn = document.getElementById("rightBtn");
+
+
+let allProducts = [];
+let activeCategory = "Усі";
+
+let catLeft = 50;
+let score = 0;
+let lives = 3;
+let gameRun = false;
+let createTimer;
+
 
 navBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
@@ -33,14 +62,6 @@ helloBtn.addEventListener("click", function () {
     userText.classList.add("effect");
   }, 50);
 });
-
-let productsList = document.getElementById("productsList");
-let searchInput = document.getElementById("searchInput");
-let catBtns = document.querySelectorAll(".cat-btn");
-
-
-let allProducts = [];
-let activeCategory = "Усі";
 
 fetch("data/products.json")
   .then(function(response) {
@@ -75,13 +96,6 @@ function showProducts() {
    addCardClicks();
 }
 
-let modal = document.getElementById("modal");
-let closeModal = document.getElementById("closeModal");
-let modalIcon = document.getElementById("modalIcon");
-let modalName = document.getElementById("modalName");
-let modalCategory = document.getElementById("modalCategory");
-let modalDescription = document.getElementById("modalDescription");
-
 function addCardClicks() {
   let cards = document.querySelectorAll(".product-card");
 
@@ -110,31 +124,25 @@ closeModal.addEventListener("click", function() {
   modal.classList.remove("active");
 });
 
+
 catBtns.forEach(function(btn) {
   btn.addEventListener("click", function() {
     activeCategory = btn.textContent;
+
+    catBtns.forEach(function(item) {
+      item.classList.remove("active");
+    }); 
+
+      btn.classList.add("active");
+
     showProducts();
   });
 });
 
+
 searchInput.addEventListener("input", function() {
   showProducts();
 });
-
-let cat = document.getElementById("cat");
-let gameArea = document.getElementById("gameArea");
-let startGameBtn = document.getElementById("startGameBtn");
-let scoreText = document.getElementById("score");
-let livesText = document.getElementById("lives");
-
-let catLeft = 50;
-let score = 0;
-let lives = 3;
-let gameRun = false;
-let createTimer;
-
-let leftBtn = document.getElementById("leftBtn");
-let rightBtn = document.getElementById("rightBtn");
 
 function moveCat(side) {
   if (side == "left") {
@@ -177,14 +185,17 @@ rightBtn.addEventListener("click", function() {
 startGameBtn.addEventListener("click", function() {
   score = 0;
   lives = 3;
+  catLeft = 50;
   gameRun = true;
 
   scoreText.textContent = score;
   livesText.textContent = lives;
+   cat.style.left = catLeft + "%";
 
   startGameBtn.textContent = "Гра йде...";
 
   clearInterval(createTimer);
+  clearItems();
 
   createTimer = setInterval(function() {
     createItem();
